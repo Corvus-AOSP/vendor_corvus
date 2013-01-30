@@ -90,6 +90,10 @@ $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
 PRODUCT_COPY_FILES += \
     vendor/corvus/prebuilt/common/etc/permissions/corvus-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/corvus-power-whitelist.xml
 
+# Enable wireless Xbox 360 controller support
+PRODUCT_COPY_FILES += \
+    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/Vendor_045e_Product_0719.kl
+
 # Backup tool
 PRODUCT_COPY_FILES += \
     vendor/corvus/build/tools/backuptool.sh:install/bin/backuptool.sh \
