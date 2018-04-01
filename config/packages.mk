@@ -17,7 +17,8 @@ PRODUCT_PACKAGES += \
     SystemNightOverlay \
     SystemUINightOverlay \
     CustomDoze \
-    CorvusWalls
+    CorvusWalls \
+    CustomFonts
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
@@ -42,3 +43,4 @@ PRODUCT_PACKAGES += \
 # Flipendo
 PRODUCT_PACKAGES += \
     Flipendo
+
