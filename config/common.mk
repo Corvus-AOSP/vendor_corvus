@@ -26,8 +26,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.disable_rescue=true \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
-    ro.input.video_enabled=false \
-    ro.build.selinux=1
+    ro.input.video_enabled=false
 
 # Gapps
 ifeq ($(USE_GAPPS),true)
