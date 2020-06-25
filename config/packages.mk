@@ -62,3 +62,6 @@ endif
 PRODUCT_PACKAGES += \
     OmniStyle
 
+# Plugins
+include packages/apps/Plugins/plugins.mk
+
