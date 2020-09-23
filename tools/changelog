@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Exports
+Changelog=Changelog.txt
 
-export Changelog=Changelog.txt
+DEVICE=$(echo $TARGET_PRODUCT | cut -d "_" -f2)
 
 if [ -f $Changelog ];
 then
@@ -22,23 +22,19 @@ k=$(expr $i - 1)
 
 	# Line with after --- until was too long for a small ListView
 	echo '====================' >> $Changelog;
-	echo  "     "$Until_Date    >> $Changelog;
-	echo '====================' >> $Changelog;
-	# Cycle through every repo to find commits between 2 dates
-	while read path;
-		do
-	CLOG=$(git --git-dir ./${path}/.git log --oneline --after=$After_Date --until=$Until_Date);
-	if [ -n "$CLOG" ]; then
-		echo project $path >> $Changelog
-		git --git-dir ./${path}/.git log --oneline --after=$After_Date --until=$Until_Date >> $Changelog
-	fi
-	done < ./.repo/project.list
-	echo >> $Changelog;
-        echo >> $Changelog;
-done
+	echo  "     "$Until_Date       >> $Changelog;
+	echo '===================='	>> $Changelog;
 
+while read path;
+do
+    Git_log=`git --git-dir ./${path}/.git log --after=$After_Date --until=$Until_Date --pretty=tformat:"%h  %s" --abbrev-commit --abbrev=7`
+    if [ ! -z "${Git_log}" ]; then
+        echo "\n* ${path}\n${Git_log}\n" >> $Changelog;
+    fi
+done < ./.repo/project.list;
+
+done
 sed -i 's/project/   */g' $Changelog
 
-cp $Changelog $OUT/system/etc/
-cp $Changelog $OUT/
-rm $Changelog
+cp $Changelog ./out/target/product/$DEVICE/system/etc/
+mv $Changelog ./out/target/product/$DEVICE/
