@@ -1,12 +1,4 @@
 bootstrap_go_package {
-    name: "soong-corvus",
-    pkgPath: "corvus/soong/android",
-    srcs: [
-        "android/variable.go",
-    ],
-}
-
-bootstrap_go_package {
     name: "soong-corvus-generator",
     pkgPath: "corvus/soong/generator",
     deps: [
