@@ -73,4 +73,9 @@
 
     <!-- Turn on dark theme by default -->
     <integer name="config_defaultNightMode">2</integer>
+
+    <!-- Amount of time in ms the user needs to press the relevant keys to trigger the
+         screenshot chord -->
+    <integer name="config_screenshotChordKeyTimeout">50</integer>
+
 </resources>
