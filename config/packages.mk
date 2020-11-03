@@ -42,3 +42,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Flipendo
 
+# SystemUI plugins
+PRODUCT_PACKAGES += \
+    QuickAccessWallet
