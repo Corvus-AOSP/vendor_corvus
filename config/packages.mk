@@ -24,6 +24,10 @@ PRODUCT_PACKAGES += \
     sqlite3 \
     ThemePicker
 
+# Config
+PRODUCT_PACKAGES += \
+    SimpleDeviceConfig
+
 # Flipendo
 PRODUCT_PACKAGES += \
     Flipendo
