@@ -150,6 +150,9 @@ endif
 
 # Flatten APEXs for performance
 OVERRIDE_TARGET_FLATTEN_APEX := true
+# This needs to be specified explicitly to override ro.apex.updatable=true from
+# # prebuilt vendors, as init reads /product/build.prop after /vendor/build.prop
+PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
 
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
