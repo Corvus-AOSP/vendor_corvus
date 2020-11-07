@@ -39,6 +39,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.services.whitelist.packagelist=com.google.android.gms
 
+# This needs to be specified explicitly to override ro.apex.updatable=true from
+# prebuilt vendors, as init reads /product/build.prop after /vendor/build.prop
+PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
+
 # Gapps
 ifeq ($(USE_GAPPS),true)
 include vendor/gms/gms.mk
