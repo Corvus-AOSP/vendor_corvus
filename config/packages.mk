@@ -1,5 +1,6 @@
 # Packages
 PRODUCT_PACKAGES += \
+    Corvus-Themes \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
