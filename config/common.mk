@@ -96,7 +96,7 @@ include vendor/corvus/config/branding.mk
 include vendor/corvus/config/packages.mk
 
 # Themes
-#include vendor/themes/common.mk
+include vendor/themes/common.mk
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/corvus/overlay
