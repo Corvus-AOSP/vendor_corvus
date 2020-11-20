@@ -113,13 +113,4 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 
 # Apex
-ifeq ($(TARGET_FLATTEN_APEX),false)
 $(call inherit-product, vendor/corvus/config/apex.mk)
-else
-# Hide "Google Play System Updates" if Apex disabled
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/corvus/overlay_apex_disabled
-
-DEVICE_PACKAGE_OVERLAYS += \
-    vendor/corvus/overlay_apex_disabled/common
-endif
