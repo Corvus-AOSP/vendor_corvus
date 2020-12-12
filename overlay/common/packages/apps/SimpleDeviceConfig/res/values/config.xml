@@ -59,5 +59,8 @@
 
         <!-- Select text on recents -->
         <item>device_personalization_services/Overview__enable_overview=true</item>
+
+        <!-- ART heap compaction for cached apps -->
+        <item>activity_manager/use_compaction=true</item>
     </string-array>
 </resources>
