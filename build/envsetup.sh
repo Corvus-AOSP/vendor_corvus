@@ -652,3 +652,6 @@ function generate_json() {
 echo "Building with ThinLTO."
 export GLOBAL_THINLTO=true
 export USE_THINLTO_CACHE=true
+
+# Disable ABI checking
+export SKIP_ABI_CHECKS=true
