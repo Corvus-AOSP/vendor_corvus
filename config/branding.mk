@@ -1,7 +1,7 @@
 # Set all versions
 RAVEN_LAIR ?= Unofficial
-CORVUS_VERSION_BASE := 12.0-R-Beta
-CORVUS_CODENAME := Athrill
+CORVUS_VERSION_BASE := 12.5-R-Beta
+CORVUS_CODENAME := XMAS
 
 # Set all versions
 BUILD_DATE := $(shell date -u +%d%m%Y)
