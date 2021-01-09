@@ -21,3 +21,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sqlite3 \
     ThemePicker
+
+# Flipendo
+PRODUCT_PACKAGES += \
+    Flipendo
