@@ -2,7 +2,7 @@
 
 corvus_device := $(patsubst %f,%,$(subst corvus_,,$(TARGET_PRODUCT)))
 
-ifneq ($(filter begonia raphael enchilada lavender mido miatoll  wayne whyred platina ginkgo vince tulip beryllium violet X00T RMX1801 tissot x2 jasmine_sprout sirius surya grus kenzo davinci,$(corvus_device)),)
+ifneq ($(filter begonia raphael enchilada lavender mido miatoll  wayne whyred platina ginkgo vince tulip beryllium violet X00T X01BD RMX1801 tissot x2 jasmine_sprout sirius surya sakura grus kenzo davinci,$(corvus_device)),)
 scr_resolution := 1080
 endif
 
