@@ -1,7 +1,7 @@
 # Set all versions
 RAVEN_LAIR ?= Unofficial
-CORVUS_VERSION_BASE := 13.0-R-Beta
-CORVUS_CODENAME := Exalted
+CORVUS_VERSION_BASE := 14.0
+CORVUS_CODENAME := Ruinous
 
 # Set all versions
 BUILD_DATE := $(shell date -u +%d%m%Y)
