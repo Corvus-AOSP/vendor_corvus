@@ -117,6 +117,16 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 $(foreach f,$(wildcard vendor/aosp/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
-
 # Apex
 $(call inherit-product, vendor/corvus/config/apex.mk)
+
+ifneq (,$(filter $(RAVEN_LAIR), Official OFFICIAL))
+    ifneq (,$(filter $(TEST_BUILD), true))
+        SIGNING_KEYS := certs
+        ifeq ($(wildcard certs/keys.txt),)
+             $(warning Signing keys not found!)
+             $(warning Copy paste 'git clone https://github.com/Corvus-R/.certs certs')
+             $(error Official build can't be done without signing keys; exiting)
+        endif
+    endif
+endif
