@@ -24,3 +24,7 @@ CORVUS_PROPERTIES := \
     ro.corvus.build.type=$(RAVEN_LAIR) \
     ro.corvus.build.version=$(CORVUS_VERSION_BASE) \
     ro.corvus.fingerprint=$(ROM_FINGERPRINT)
+
+ifneq ($(CORVUS_MAINTAINER),)
+    CORVUS_PROPERTIES += ro.corvus.maintainer=$(CORVUS_MAINTAINER)
+endif
