@@ -118,9 +118,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
-# Apex
-$(call inherit-product, vendor/corvus/config/apex.mk)
-
 ifneq (,$(filter $(RAVEN_LAIR), Official OFFICIAL))
     ifneq (,$(filter $(TEST_BUILD), true))
         SIGNING_KEYS := certs
