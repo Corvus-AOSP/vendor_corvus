@@ -7,6 +7,7 @@ PRODUCT_PACKAGES += \
     WallpaperPicker2 \
     TouchGestures \
     StitchImage \
+    StitchImageService \
     SystemPitchBlackOverlay \
     SystemUIPitchBlackOverlay \
     SystemDarkGrayOverlay \
