@@ -40,7 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Gapps
 ifeq ($(USE_GAPPS),true)
-include vendor/gapps/gapps.mk
+include vendor/gms/gms.mk
 endif
 
 # Copy all custom init rc files
