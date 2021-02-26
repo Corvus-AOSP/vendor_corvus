@@ -121,12 +121,12 @@ $(foreach f,$(wildcard vendor/aosp/prebuilt/common/etc/init/*.rc),\
 $(call inherit-product, vendor/corvus/config/apex.mk)
 
 ifneq (,$(filter $(RAVEN_LAIR), Official OFFICIAL))
-SIGNING_KEYS := .certs
-    ifeq ($(wildcard .certs/keys.txt),)
+SIGNING_KEYS := certs
+    ifeq ($(wildcard certs/keys.txt),)
          $(warning Signing keys not found!)
          $(warning Please place https://github.com/Corvus-R/.certs)
-         $(warning into .certs)
-         $(warning git clone https://github.com/Corvus-R/.certs .certs)
+         $(warning into certs)
+         $(warning git clone https://github.com/Corvus-R/.certs certs)
          $(error Official build can't be done without signing keys; exiting)
     endif
 endif
