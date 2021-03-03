@@ -28,6 +28,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.setupwizard.mode=OPTIONAL \
     setupwizard.feature.predeferred_enabled=false \
     drm.service.enabled=true \
+    ro.iorapd.enable=true \
     net.tethering.noprovisioning=true \
     keyguard.no_require_sim=true \
     persist.sys.disable_rescue=true \
