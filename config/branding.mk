@@ -1,7 +1,7 @@
 # Set all versions
 RAVEN_LAIR ?= Unofficial
-CORVUS_VERSION_BASE := 14.5
-CORVUS_CODENAME := Mutate
+CORVUS_VERSION_BASE := 15.0
+CORVUS_CODENAME := RavenClaw
 
 # Set all versions
 BUILD_DATE := $(shell date -u +%d%m%Y)
