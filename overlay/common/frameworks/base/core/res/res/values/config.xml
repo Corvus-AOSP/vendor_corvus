@@ -108,14 +108,14 @@
         <item>com.tencent.mm</item>
     </string-array>
 
-     <!-- Name of a font family to use for body text. -->
-    <string name="config_bodyFontFamily" translatable="false">ginto</string>
+    <!-- Name of a font family to use for body text. -->
+    <string name="config_bodyFontFamily" translatable="false">googlesans</string>
     <!-- Name of a font family to use for medium body text. -->
-    <string name="config_bodyFontFamilyMedium" translatable="false">ginto</string>
+    <string name="config_bodyFontFamilyMedium" translatable="false">googlesans-semi-bold</string>
     <!-- Name of a font family to use for headlines. If empty, falls back to platform default -->
-    <string name="config_headlineFontFamily" translatable="false">ginto</string>
+    <string name="config_headlineFontFamily" translatable="false">googlesans-medium</string>
     <!-- Name of the font family used for system surfaces where the font should use medium weight -->
-    <string name="config_headlineFontFamilyMedium" translatable="false">ginto</string>
+    <string name="config_headlineFontFamilyMedium" translatable="false">googlesans-bold</string>
      <!-- Package name that will receive an explicit manifest broadcast for
          android.os.action.POWER_SAVE_MODE_CHANGED. -->
     <string name="config_powerSaveModeChangedListenerPackage">com.google.android.flipendo</string>
