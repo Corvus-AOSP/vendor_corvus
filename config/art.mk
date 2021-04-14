@@ -14,7 +14,8 @@ PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed-profile
 # Speed apps
 PRODUCT_DEXPREOPT_SPEED_APPS += \
   SystemUI \
-  Settings
+  Settings \
+  Launcher3
 
 # GApps
 ifeq ($(USE_GAPPS),true)
