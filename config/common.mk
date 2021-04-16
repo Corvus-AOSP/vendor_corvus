@@ -6,9 +6,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
-PRODUCT_PACKAGES += \
-    adb_root
-
 # Additional props
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.debug.alloc=0 \
@@ -82,15 +79,6 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Enable ccache
 USE_CCACHE := true
-
-# Filesystems tools
-PRODUCT_PACKAGES += \
-    fsck.exfat \
-    fsck.ntfs \
-    mke2fs \
-    mkfs.exfat \
-    mkfs.ntfs \
-    mount.ntfs
 
 # Art
 include vendor/corvus/config/art.mk
