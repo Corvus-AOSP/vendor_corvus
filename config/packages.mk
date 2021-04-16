@@ -16,7 +16,17 @@ PRODUCT_PACKAGES += \
     SystemUIStyleOverlay \
     SystemNightOverlay \
     SystemUINightOverlay \
-    CustomDoze \
+    CustomDoze
+
+# Filesystems tools
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    fsck.ntfs \
+    mke2fs \
+    mkfs.exfat \
+    mkfs.ntfs \
+    mount.ntfs \
+    adb_root
 
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
