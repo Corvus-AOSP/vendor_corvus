@@ -8,5 +8,5 @@ endef
 # Include board/platform macros
 include vendor/corvus/build/core/utils.mk
 
-# Include platform definitions
-include vendor/corvus/build/core/qcom_boards.mk
+# Include vendor platform definitions
+include vendor/corvus/build/core/vendor/*.mk

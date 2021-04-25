@@ -16,7 +16,7 @@ endif
 DTBTOOL := $(HOST_OUT_EXECUTABLES)/$(DTBTOOL_NAME)$(HOST_EXECUTABLE_SUFFIX)
 
 ifeq ($(strip $(TARGET_CUSTOM_DTBTOOL)),)
-# dtbToolCM will search subdirectories
+# dtbToolLineage will search subdirectories
 possible_dtb_dirs = $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/
 else
 # Most specific paths must come first in possible_dtb_dirs
