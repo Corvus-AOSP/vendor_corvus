@@ -16,7 +16,8 @@ PRODUCT_PACKAGES += \
     SystemUIStyleOverlay \
     SystemNightOverlay \
     SystemUINightOverlay \
-    CustomDoze
+    CustomDoze \
+    CorvusWalls
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
