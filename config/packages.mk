@@ -4,10 +4,9 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
-    WallpaperPicker2 \
-    TouchGestures \
     StitchImage \
     StitchImageService \
+    ThemePicker \
     SystemPitchBlackOverlay \
     SystemUIPitchBlackOverlay \
     SystemDarkGrayOverlay \
@@ -33,8 +32,7 @@ PRODUCT_PACKAGES += \
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
 PRODUCT_PACKAGES += \
-    sqlite3 \
-    ThemePicker
+    sqlite3
 
 # Config
 PRODUCT_PACKAGES += \
