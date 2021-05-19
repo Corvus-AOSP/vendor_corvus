@@ -105,7 +105,7 @@ function setup_vendor() {
     fi
 
     if [ -z "$PATCHELF" ]; then
-        export PATCHELF="$CORVUS_ROOT"/prebuilts/tools-lineage/${HOST}-x86/bin/patchelf
+        export PATCHELF="$CORVUS_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/patchelf
     fi
 }
 
@@ -1256,16 +1256,16 @@ function oat2dex() {
     local OAT=
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
-        export BAKSMALIJAR="$CORVUS_ROOT"/prebuilts/tools-lineage/common/smali/baksmali.jar
-        export SMALIJAR="$CORVUS_ROOT"/prebuilts/tools-lineage/common/smali/smali.jar
+        export BAKSMALIJAR="$CORVUS_ROOT"/prebuilts/tools-extras/common/smali/baksmali.jar
+        export SMALIJAR="$CORVUS_ROOT"/prebuilts/tools-extras/common/smali/smali.jar
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
-        export VDEXEXTRACTOR="$CORVUS_ROOT"/prebuilts/tools-lineage/${HOST}-x86/bin/vdexExtractor
+        export VDEXEXTRACTOR="$CORVUS_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/vdexExtractor
     fi
 
     if [ -z "$CDEXCONVERTER" ]; then
-        export CDEXCONVERTER="$CORVUS_ROOT"/prebuilts/tools-lineage/${HOST}-x86/bin/compact_dex_converter
+        export CDEXCONVERTER="$CORVUS_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/compact_dex_converter
     fi
 
     # Extract existing boot.oats to the temp folder
