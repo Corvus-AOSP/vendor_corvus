@@ -61,7 +61,7 @@ PRODUCT_COPY_FILES += \
     vendor/corvus/prebuilt/common/etc/permissions/privapp-permissions-corvus-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-corvus-system.xml \
     vendor/corvus/prebuilt/common/etc/permissions/privapp-permissions-corvus-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-corvus-product.xml \
     vendor/corvus/prebuilt/common/etc/permissions/privapp-permissions-recorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-recorder.xml \
-    vendor/corvus/prebuilt/common/etc/permissions/privapp-permissions-corvus-system.xml:$(TARGET_OUT_SYSTEM_EXT_ETC)/etc/permissions/privapp-permissions-corvus-system_ext.xml \
+    vendor/corvus/prebuilt/common/etc/permissions/privapp-permissions-corvus-system_ext.xml:$(TARGET_OUT_SYSTEM_EXT_ETC)/etc/permissions/privapp-permissions-corvus-system_ext.xml \
     vendor/corvus/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml \
     vendor/corvus/prebuilt/google/etc/sysconfig/pixel_experience_2020.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_experience_2020.xml 
    
