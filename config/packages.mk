@@ -26,8 +26,7 @@ PRODUCT_PACKAGES += \
     mke2fs \
     mkfs.exfat \
     mkfs.ntfs \
-    mount.ntfs \
-    adb_root
+    mount.ntfs
 
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
