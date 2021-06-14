@@ -1,6 +1,6 @@
 # Set all versions
 RAVEN_LAIR ?= Unofficial
-CORVUS_VERSION_BASE := 16.0
+CORVUS_VERSION_BASE := 16.5
 CORVUS_CODENAME := Alpha-Centauri
 
 # Set all versions
