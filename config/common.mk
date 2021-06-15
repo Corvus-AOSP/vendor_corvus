@@ -45,6 +45,14 @@ ifeq ($(USE_GAPPS),true)
 include vendor/gms/gms.mk
 endif
 
+# Proton Clang
+ifeq ($(USE_PROTON),true)
+KERNEL_SUPPORTS_LLVM_TOOLS := true
+TARGET_KERNEL_CLANG_VERSION := proton
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+endif
+
 # Copy all custom init rc files
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
@@ -64,7 +72,7 @@ PRODUCT_COPY_FILES += \
     vendor/corvus/prebuilt/common/etc/permissions/privapp-permissions-corvus-system_ext.xml:$(TARGET_OUT_SYSTEM_EXT_ETC)/etc/permissions/privapp-permissions-corvus-system_ext.xml \
     vendor/corvus/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml \
     vendor/corvus/prebuilt/google/etc/sysconfig/pixel_experience_2020.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_experience_2020.xml 
-   
+
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
