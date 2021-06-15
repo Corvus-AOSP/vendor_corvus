@@ -44,3 +44,8 @@ PRODUCT_PACKAGES += \
 # SystemUI plugins
 PRODUCT_PACKAGES += \
     QuickAccessWallet
+
+ifneq (,$(filter $(RAVEN_LAIR), Official))
+PRODUCT_PACKAGES += \
+    RavenDesk
+endif
