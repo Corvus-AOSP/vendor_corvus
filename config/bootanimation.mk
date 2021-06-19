@@ -6,7 +6,7 @@ ifneq ($(filter jd2019 kunlun2 begonia raphael enchilada lavender payton mido mi
 scr_resolution := 1080
 endif
 
-ifneq ($(filter ysl riva land santoni X00P,$(corvus_device)),)
+ifneq ($(filter ysl riva land santoni X00P laurel_sprout,$(corvus_device)),)
 scr_resolution := 720
 endif
 
