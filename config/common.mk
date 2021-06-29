@@ -121,7 +121,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
-ifneq (,$(filter $(RAVEN_LAIR), Official OFFICIAL))
+ifneq (,$(filter $(RAVEN_LAIR), Official Beta-Official))
     ifneq (,$(filter $(TEST_BUILD), true))
         SIGNING_KEYS := certs
         ifeq ($(wildcard certs/keys.txt),)
