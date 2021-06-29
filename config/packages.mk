@@ -45,7 +45,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     QuickAccessWallet
 
-ifneq (,$(filter $(RAVEN_LAIR), Official))
+ifneq (,$(filter $(RAVEN_LAIR), Official, Beta-Official))
 PRODUCT_PACKAGES += \
     RavenDesk
 endif
