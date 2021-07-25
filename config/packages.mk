@@ -17,7 +17,8 @@ PRODUCT_PACKAGES += \
     SystemUINightOverlay \
     CustomDoze \
     CorvusWalls \
-    CustomFonts
+    CustomFonts \
+    OmniJaws
 
 # Charger mode images
 ifeq ($(TARGET_INCLUDE_PIXEL_CHARGER),true)
