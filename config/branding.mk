@@ -1,7 +1,7 @@
 # Set all versions
 RAVEN_LAIR ?= Unofficial
-CORVUS_VERSION_BASE := 16.6
-CORVUS_CODENAME := Paradox
+CORVUS_VERSION_BASE := 16.7
+CORVUS_CODENAME := Obsidian
 
 # Set all versions
 BUILD_DATE := $(shell date -u +%d%m%Y)
