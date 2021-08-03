@@ -128,7 +128,7 @@ include vendor/corvus/config/packages.mk
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/corvus/overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/corvus/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/corvus/overlay/common
 
 # Copy all init rc files
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
