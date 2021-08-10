@@ -111,15 +111,6 @@ DEVICE_PACKAGE_OVERLAYS += vendor/corvus/overlay/common
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
-ifneq (,$(filter $(RAVEN_LAIR), Official Beta-Official))
-    SIGNING_KEYS := certs
-    ifeq ($(wildcard certs/keys.txt),)
-         $(warning Signing keys not found!)
-         $(warning Copy paste 'git clone https://github.com/Corvus-R/.certs certs')
-         $(error Official build can't be done without signing keys; exiting)
-    endif
-endif
-
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED ?= true
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
