@@ -47,6 +47,10 @@ custom_dependencies = "corvus.dependencies"
 org_manifest = "device"  # leave empty if org is provided in manifest
 org_display = "CorvusROM-Devices"  # needed for displaying
 
+default_manifest = ".repo/manifests/default.xml"
+corvus_manifest = ".repo/manifests/snippets/corvus.xml"
+lineage_manifest = ".repo/manifests/snippets/lineage.xml"
+
 github_auth = None
 
 local_manifests = '.repo/local_manifests'
@@ -75,6 +79,15 @@ def add_auth(g_req):
     if github_auth:
         g_req.add_header("Authorization", "Basic %s" % github_auth)
 
+
+def exists_in_tree(lm, repository):
+     for child in list(lm):
+        try:
+            if child.attrib['path'].endswith(repository):
+                return child
+        except:
+            pass
+     return None
 
 def indent(elem, level=0):
     # in-place prettyprint formatter
@@ -150,6 +163,9 @@ def is_in_manifest(project_path):
 
 def add_to_manifest(repos, fallback_branch=None):
     lm = load_manifest(custom_local_manifest)
+    mlm = load_manifest(default_manifest)
+    corvusm = load_manifest(corvus_manifest)
+    lineagem = load_manifest(lineage_manifest)
 
     for repo in repos:
         repo_name = repo['repository']
@@ -166,10 +182,25 @@ def add_to_manifest(repos, fallback_branch=None):
             repo_remote="github"
 
         if is_in_manifest(repo_path):
-            print('already exists: %s' % repo_path)
+            print('%s already exists in the local manifest', repo_path)
             continue
 
-        print('Adding dependency:\nRepository: %s\nBranch: %s\nRemote: %s\nPath: %s\n' % (repo_name, repo_branch,repo_remote, repo_path))
+        existing_m_project = None
+        if exists_in_tree(corvusm, repo_path) != None:
+            existing_m_project = exists_in_tree(corvusm, repo_path)
+        elif exists_in_tree(lineagem, repo_path) != None:
+            existing_m_project = exists_in_tree(lineagem, repo_path)
+        elif exists_in_tree(mlm, repo_path) != None:
+            existing_m_project = exists_in_tree(mlm, repo_path)
+
+        if existing_m_project != None:
+            if existing_m_project.attrib['path'] == repo['target_path']:
+                print('%s already exists in main manifest, replacing with new dep' % repo_name)
+                lm.append(ElementTree.Element("remove-project", attrib = {
+                    "name": existing_m_project.attrib['name']
+                }))
+
+        print('Adding dependency:\nRepository: %s\nBranch: %s\nRemote: %s\nPath: %s\n' % (repo_name, repo_branch, repo_remote, repo_path))
 
         project = ElementTree.Element(
             "project",
