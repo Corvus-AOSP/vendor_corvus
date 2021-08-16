@@ -3,11 +3,11 @@
 
 corvus_device := $(patsubst %f,%,$(subst corvus_,,$(TARGET_PRODUCT)))
 
-ifneq ($(filter s2 jd2019 kunlun2 begonia raphael lavender payton mido miatoll excalibur gram whyred ginkgo beryllium violet X00T surya sakura phoenix RMX1921 CPH1859 RMX2001 juice apollo,$(corvus_device)),) || ($(TARGET_BOOT_ANIMATION_RES),1080)
+ifneq ($(filter s2 jd2019 kunlun2 begonia raphael lavender payton mido miatoll excalibur gram whyred ginkgo beryllium violet X00T surya sakura phoenix RMX1921 CPH1859 RMX2001 juice apollo,$(corvus_device)),)
 scr_resolution := 1080
 endif
 
-ifneq ($(filter ysl laurel_sprout,$(corvus_device)),) || ($(TARGET_BOOT_ANIMATION_RES),720)
+ifneq ($(filter ysl laurel_sprout,$(corvus_device)),)
 scr_resolution := 720
 endif
 
