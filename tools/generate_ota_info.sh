@@ -14,7 +14,7 @@ if [ "$1" ]; then
         datetime=$(grep ro\.build\.date\.utc ${build_prop} | cut -d= -f2);
         filehash=$(md5sum $file_path | awk '{ print $1 }');
         id=$(sha256sum $file_path | awk '{ print $1 }');
-        url="https://ota.corvusrom.com/${codename}/${file_name}";
+        url=$(echo $PLING_URL)
         echo "{" > $file_path.json
 	echo "  \"codename\":\"${codename}\"," >> $file_path.json
         echo "  \"name\":\"${name}\"," >> $file_path.json
