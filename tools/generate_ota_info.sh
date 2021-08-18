@@ -3,7 +3,7 @@ if [ "$1" ]; then
     file_path=$1
     file_name=$(basename "$file_path")
     if [ -f $file_path ]; then
-	codename=$(echo $TARGET_PRODUCT | cut -d "_" -f2)
+	codename=$(echo $TARGET_PRODUCT | sed 's/corvus_//g')
         build_prop="out/target/product/${codename}/system/build.prop";
         name=$(grep ro\.product\.system\.model ${build_prop} | cut -d= -f2);
         version_codename=$(grep ro\.corvus\.codename ${build_prop} | cut -d= -f2);
