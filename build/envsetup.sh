@@ -632,3 +632,19 @@ function fixup_common_out_dir() {
         mkdir -p ${common_out_dir}
     fi
 }
+
+function generate_json() {
+    . vendor/corvus/tools/generate_links.sh
+    echo "Type your telegram id (without @) and press enter"
+    read maintainer_name
+    export MAINTAINER=$maintainer_name
+    ./vendor/corvus/tools/generate_ota_info.sh $1
+    echo "======================================================================================="
+    echo "FOR OFFICIAL MAINTAINERS ONLY"
+    echo "Check if links are not generated wrong before pushing update, if it's wrong or not generated at all, add them manually in json and spam @victor10520 in telegram"
+    echo ""
+    echo $PLING_URL
+    echo $GROUP_URL
+    echo "======================================================================================="
+}
+

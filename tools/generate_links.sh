@@ -55,3 +55,5 @@ elif [ "$device_name" = "vince" ]; then
 elif [ "$device_name" = "tulip" ]; then
   export PLING_URL=https://www.pling.com/p/1372053;
 fi
+
+export GROUP_URL=https://telegram.dog/corvus"$device_name"
