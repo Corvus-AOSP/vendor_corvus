@@ -24,7 +24,7 @@ if [ "$1" ]; then
         echo "  \"datetime\":${datetime}," >> $file_path.json
         echo "  \"filehash\":\"${filehash}\"," >> $file_path.json
         echo "  \"url\":\"${url}\"," >> $file_path.json
-        echo "  \"group\":\"${group}\"," >> $file_path.json
+        echo "  \"group\":\"${group}\" >> $file_path.json
         echo "}" >> $file_path.json
         mv "${file_path}.json" "./${codename}.json"
         echo "JSON Generated: ${codename}.json"
