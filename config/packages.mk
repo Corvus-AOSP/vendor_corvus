@@ -18,7 +18,8 @@ PRODUCT_PACKAGES += \
     CustomDoze \
     CorvusWalls \
     CustomFonts \
-    OmniJaws
+    OmniJaws \
+    GamingMode
 
 # Charger mode images
 ifeq ($(TARGET_INCLUDE_PIXEL_CHARGER),true)
