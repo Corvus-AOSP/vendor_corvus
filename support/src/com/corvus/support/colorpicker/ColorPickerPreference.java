@@ -37,6 +37,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import java.util.Random;
+
 import com.corvus.support.R;
 
 /**
@@ -64,6 +66,7 @@ public class ColorPickerPreference extends Preference implements
     int mDefValue = -1;
 
     private boolean mShowReset;
+    private boolean mSetRandomColor;
     private boolean mShowPreview;
     private boolean mShowLedPreview;
     private boolean mDividerAbove;
@@ -110,6 +113,7 @@ public class ColorPickerPreference extends Preference implements
         if (attrs != null) {
             mAlphaSliderEnabled = attrs.getAttributeBooleanValue(null, "alphaSlider", false);
             mShowReset = attrs.getAttributeBooleanValue(SETTINGS_NS, "showReset", true);
+            mSetRandomColor = attrs.getAttributeBooleanValue(SETTINGS_NS, "setRandom", true);
             mShowPreview = attrs.getAttributeBooleanValue(SETTINGS_NS, "showPreview", true);
             mDividerAbove = attrs.getAttributeBooleanValue(SETTINGS_NS, "dividerAbove", false);
             mDividerBelow = attrs.getAttributeBooleanValue(SETTINGS_NS, "dividerBelow", false);
@@ -143,7 +147,60 @@ public class ColorPickerPreference extends Preference implements
             setDefaultButton();
         }
 
+        setRandomColorButton();
         setPreviewColor();
+    }
+
+    private void setRandomColorButton() {
+        if (!mSetRandomColor || mView == null)
+            return;
+
+        LinearLayout widgetFrameView = ((LinearLayout) mView
+                .findViewById(android.R.id.widget_frame));
+        if (widgetFrameView == null)
+            return;
+
+        widgetFrameView.setOrientation(LinearLayout.HORIZONTAL);
+
+        if (!isEnabled()) return;
+
+        ImageView randomView = new ImageView(getContext());
+        int count = widgetFrameView.getChildCount();
+        if (count > 0) {
+            View oldView = widgetFrameView.findViewWithTag("setRandom");
+            View spacer = widgetFrameView.findViewWithTag("spacer");
+            if (oldView != null) {
+                widgetFrameView.removeView(oldView);
+            }
+            if (spacer != null) {
+                widgetFrameView.removeView(spacer);
+            }
+        }
+
+        Random rnd = new Random();
+        int shuffleColor = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+
+        widgetFrameView.addView(randomView);
+        widgetFrameView.setMinimumWidth(0);
+        randomView.setBackground(getContext().getDrawable(R.drawable.ic_color_shuffle));
+        randomView.setTag("setRandom");
+        randomView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    getOnPreferenceChangeListener().onPreferenceChange(ColorPickerPreference.this,
+                            Integer.valueOf(shuffleColor));
+                    onColorChanged(shuffleColor);
+                } catch (NullPointerException e) {
+                }
+            }
+        });
+
+        View spacer = new View(getContext());
+        spacer.setTag("spacer");
+        spacer.setLayoutParams(new LinearLayout.LayoutParams((int) (mDensity * 16),
+                LayoutParams.MATCH_PARENT));
+        widgetFrameView.addView(spacer);
     }
 
     /**
@@ -261,6 +318,7 @@ public class ColorPickerPreference extends Preference implements
         super.setEnabled(enabled);
         setPreviewColor();
         setDefaultButton();
+        setRandomColorButton();
     }
 
     @Override
