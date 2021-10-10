@@ -56,7 +56,8 @@ PRODUCT_PACKAGES += \
 
 ifneq (,$(filter $(RAVEN_LAIR), Official Beta-Official))
 PRODUCT_PACKAGES += \
-    RavenDesk
+    RavenDesk \
+    CorvusZen
 endif
 
 # OmniStyle
