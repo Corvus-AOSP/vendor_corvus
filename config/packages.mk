@@ -67,3 +67,8 @@ PRODUCT_PACKAGES += \
 # Plugins
 include packages/apps/Plugins/plugins.mk
 
+# Chromium
+PRODUCT_PACKAGES += \
+    TrichromeChrome \
+    TrichromeWebView
+
