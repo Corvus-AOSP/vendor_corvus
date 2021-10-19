@@ -6,39 +6,59 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+# Google Play services configuration
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.com.google.clientidbase=android-google \
+    ro.error.receiver.system.apps=com.google.android.gms \
+    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent
+
 # Additional props
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.debug.alloc=0 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
-    ro.error.receiver.system.apps=com.google.android.gms \
-    ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dataroaming=false \
-    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
-    ro.setupwizard.rotation_locked=true \
-    ro.com.google.ime.theme_id=5 \
-    ro.storage_manager.enabled=1 \
+    media.recorder.show_manufacturer_and_model=true \
     ro.opa.eligible_device=true \
-    ro.com.android.wifi-watchlist=GoogleGuest \
-    ro.setupwizard.network_required=false \
-    ro.setupwizard.gservices_delay=-1 \
-    ro.setupwizard.mode=OPTIONAL \
-    setupwizard.feature.predeferred_enabled=false \
     drm.service.enabled=true \
-    ro.iorapd.enable=true \
+    media.mediadrmservice.enable=true
     net.tethering.noprovisioning=true \
     keyguard.no_require_sim=true \
     persist.sys.disable_rescue=true \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
+    ro.input.video_enabled=false \
     ro.build.selinux=1
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.services.whitelist.packagelist=com.google.android.gms
+# SetupWizard configuration
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.setupwizard.esim_cid_ignore=00000001 \
+    ro.setupwizard.rotation_locked=true \
+    setupwizard.enable_assist_gesture_training=true \
+    setupwizard.feature.baseline_setupwizard_enabled=true \
+    setupwizard.feature.device_default_dark_mode=true \
+    setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
+    setupwizard.feature.show_pixel_tos=true \
+    setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
+    setupwizard.theme=glif_v3_light
 
-# This needs to be specified explicitly to override ro.apex.updatable=true from
-# prebuilt vendors, as init reads /product/build.prop after /vendor/build.prop
-PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
+# Gboard configuration
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.com.google.ime.bs_theme=true \
+    ro.com.google.ime.kb_pad_port_b=1 \
+    ro.com.google.ime.theme_id=5 \
+    ro.com.google.ime.system_lm_dir=/product/usr/share/ime/google/d3_lms
+
+# StorageManager configuration
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.storage_manager.enabled=1 \
+    ro.storage_manager.show_opt_in=false
+
+# Blur properties
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1    
 
 # Gapps
 ifeq ($(USE_GAPPS),true)
@@ -77,9 +97,6 @@ PRODUCT_COPY_FILES += \
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# Flatten APEXs for performance
-OVERRIDE_TARGET_FLATTEN_APEX := true
-
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
 # leave less information available via JDWP.
@@ -102,6 +119,11 @@ include vendor/corvus/config/packages.mk
 
 # Themes
 include vendor/themes/common.mk
+
+# Dex-Optimisation
+ifeq ($(USE_DEXOPT),true)
+include vendor/corvus/config/dexopt.mk
+endif
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/corvus/overlay
