@@ -69,6 +69,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_land_l=64 \
     ro.com.google.ime.kb_pad_land_r=64
 
+# Disable writing to XML as binary.
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.binary_xml=false
+
 # Proton Clang
 ifeq ($(USE_PROTON),true)
 KERNEL_SUPPORTS_LLVM_TOOLS := true
