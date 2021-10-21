@@ -63,10 +63,9 @@ PRODUCT_PACKAGES += \
     OmniStyle
 
 # Plugins
-include packages/apps/Plugins/plugins.mk
+#include packages/apps/Plugins/plugins.mk
 
 # Chromium
 PRODUCT_PACKAGES += \
     TrichromeChrome \
     TrichromeWebView
-
