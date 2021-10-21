@@ -28,6 +28,7 @@ import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.Handler;
 import androidx.preference.*;
 import android.util.AttributeSet;
 import android.view.View;
@@ -36,6 +37,8 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
 
 import java.util.Random;
 
@@ -191,6 +194,7 @@ public class ColorPickerPreference extends Preference implements
                     getOnPreferenceChangeListener().onPreferenceChange(ColorPickerPreference.this,
                             Integer.valueOf(shuffleColor));
                     onColorChanged(shuffleColor);
+                    Toast.makeText(getContext(), "Please give time while the SystemUI refreshes new accent", Toast.LENGTH_SHORT).show();
                 } catch (NullPointerException e) {
                 }
             }
