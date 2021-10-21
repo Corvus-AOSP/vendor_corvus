@@ -55,11 +55,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=1 \
     ro.storage_manager.show_opt_in=false
 
-# Blur properties
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.sf.blurs_are_expensive=1 \
-    ro.surface_flinger.supports_background_blur=1    
-
 # Gapps
 ifeq ($(USE_GAPPS),true)
 include vendor/gms/gms.mk
