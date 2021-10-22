@@ -57,7 +57,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Gapps
 ifeq ($(USE_GAPPS),true)
-include vendor/gms/gms.mk
+include vendor/google/gms/config.mk
 endif
 
 # Proton Clang
@@ -88,7 +88,6 @@ PRODUCT_COPY_FILES += \
     vendor/corvus/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml \
     vendor/corvus/prebuilt/google/etc/sysconfig/pixel_experience_2020.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_experience_2020.xml 
 
-
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
@@ -113,7 +112,7 @@ include vendor/corvus/config/branding.mk
 include vendor/corvus/config/packages.mk
 
 # Themes
-include vendor/themes/common.mk
+#include vendor/themes/common.mk
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/corvus/overlay
@@ -122,15 +121,6 @@ DEVICE_PACKAGE_OVERLAYS += vendor/corvus/overlay/common
 # Copy all init rc files
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
-
-ifneq (,$(filter $(RAVEN_LAIR), Official Beta-Official))
-    SIGNING_KEYS := certs
-    ifeq ($(wildcard certs/keys.txt),)
-         $(warning Signing keys not found!)
-         $(warning Copy paste 'git clone https://github.com/Corvus-R/.certs certs')
-         $(error Official build can't be done without signing keys; exiting)
-    endif
-endif
 
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED ?= true
