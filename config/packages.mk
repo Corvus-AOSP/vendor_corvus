@@ -7,14 +7,6 @@ PRODUCT_PACKAGES += \
     StitchImage \
     StitchImageService \
     ThemePicker \
-    SystemPitchBlackOverlay \
-    SystemUIPitchBlackOverlay \
-    SystemDarkGrayOverlay \
-    SystemUIDarkGrayOverlay \
-    SystemStyleOverlay \
-    SystemUIStyleOverlay \
-    SystemNightOverlay \
-    SystemUINightOverlay \
     CustomDoze \
     CorvusWalls \
     CustomFonts \
