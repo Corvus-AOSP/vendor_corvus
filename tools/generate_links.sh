@@ -13,7 +13,7 @@ elif [ "$device_name" = "s2" ]; then
 elif [ "$device_name" = "violet" ]; then
   export PLING_URL=https://www.pling.com/p/1372063;
 elif [ "$device_name" = "lavender" ]; then
-  export PLING_URL=https://www.pling.com/p/1372062;
+  export PLING_URL=https://www.pling.com/p/1590110;;
 elif [ "$device_name" = "miatoll" ] || [ "$device_name" = "excalibur" ] || [ "$device_name" = "gram" ]; then
   export PLING_URL=https://www.pling.com/p/1421725;
 elif [ "$device_name" = "ysl" ]; then
