@@ -3,7 +3,7 @@ device_name=$(echo $TARGET_PRODUCT | sed 's/corvus_//g')
 if [ "$device_name" = "kunlun2_row" ] || [ "$device_name" = "kunlun2" ]; then
   export PLING_URL=https://www.pling.com/p/1460330;
 elif [ "$device_name" = "jd2019" ]; then
-  export PLING_URL=https://www.pling.com/p/1404383;
+  export PLING_URL=https://www.pling.com/p/1590074/;
 elif [ "$device_name" = "payton" ]; then
   export PLING_URL=https://www.pling.com/p/1480512;
 elif [ "$device_name" = "surya" ]; then
