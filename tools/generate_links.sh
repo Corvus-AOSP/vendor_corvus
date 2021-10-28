@@ -5,7 +5,7 @@ if [ "$device_name" = "kunlun2_row" ] || [ "$device_name" = "kunlun2" ]; then
 elif [ "$device_name" = "jd2019" ]; then
   export PLING_URL=https://www.pling.com/p/1590074/;
 elif [ "$device_name" = "payton" ]; then
-  export PLING_URL=https://www.pling.com/p/1480512;
+  export PLING_URL=https://www.pling.com/p/1628941;
 elif [ "$device_name" = "surya" ]; then
   export PLING_URL=https://www.pling.com/p/1590082;
 elif [ "$device_name" = "s2" ]; then
