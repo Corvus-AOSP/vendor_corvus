@@ -27,7 +27,7 @@ elif [ "$device_name" = "ginkgo" ]; then
 elif [ "$device_name" = "laurel_sprout" ]; then
   export PLING_URL=https://www.pling.com/p/1590064;
 elif [ "$device_name" = "X00TD" ] || [ "$device_name" = "X00T" ]; then
-  export PLING_URL=https://www.pling.com/p/1411412;
+  export PLING_URL=https://www.pling.com/p/1590044;
 elif [ "$device_name" = "sakura" ]; then
   export PLING_URL=https://www.pling.com/p/1590084;
 elif [ "$device_name" = "vayu" ]; then
