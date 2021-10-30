@@ -60,6 +60,8 @@ elif [ "$device_name" = "lemonkebab" ]; then
   export PLING_URL=https://www.pling.com/p/1590077/;
 elif [ "$device_name" = "juice" ]; then
   export PLING_URL=https://www.pling.com/p/1590086/;
+elif [ "$device_name" = "tissot" ]; then
+  export PLING_URL=https://www.pling.com/p/1630564/;
 fi
 
 export GROUP_URL=https://telegram.dog/corvus"$device_name"
