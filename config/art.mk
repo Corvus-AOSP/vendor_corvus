@@ -28,7 +28,3 @@ ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.ab-ota=quicken
 endif
-
-# IORap app launch prefetching using Perfetto traces and madvise
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.iorapd.enable=true

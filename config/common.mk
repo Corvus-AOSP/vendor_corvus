@@ -86,6 +86,13 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.wm.enable_remote_keyguard_animation=0
 
+# IORap app launch prefetching using Perfetto traces and madvise
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.iorapd.enable=true
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
+
 # Proton Clang
 ifeq ($(USE_PROTON),true)
 KERNEL_SUPPORTS_LLVM_TOOLS := true
