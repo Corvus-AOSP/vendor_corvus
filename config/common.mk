@@ -81,6 +81,10 @@ endif
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
+# Permission
+PRODUCT_COPY_FILES += \
+    vendor/corvus/prebuilt/common/etc/permissions/corvus-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/corvus-power-whitelist.xml
+
 # Backup tool
 PRODUCT_COPY_FILES += \
     vendor/corvus/build/tools/backuptool.sh:install/bin/backuptool.sh \
