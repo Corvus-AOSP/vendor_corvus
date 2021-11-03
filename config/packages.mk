@@ -1,15 +1,11 @@
 # Packages
 PRODUCT_PACKAGES += \
-    Corvus-Themes \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
-    StitchImage \
-    StitchImageService \
     ThemePicker \
     CustomDoze \
     CorvusWalls \
-    CustomFonts \
     OmniJaws \
     GamingMode \
     TouchGestures
@@ -38,10 +34,6 @@ PRODUCT_PACKAGES += \
     SimpleDeviceConfig \
     SettingsIntelligenceGooglePrebuilt
 
-# Flipendo
-PRODUCT_PACKAGES += \
-    Flipendo
-
 # SystemUI plugins
 PRODUCT_PACKAGES += \
     QuickAccessWallet
@@ -51,13 +43,6 @@ PRODUCT_PACKAGES += \
     RavenDesk \
     CorvusZen
 endif
-
-# OmniStyle
-PRODUCT_PACKAGES += \
-    OmniStyle
-
-# Plugins
-#include packages/apps/Plugins/plugins.mk
 
 # Chromium
 PRODUCT_PACKAGES += \
