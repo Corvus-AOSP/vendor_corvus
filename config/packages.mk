@@ -11,7 +11,8 @@ PRODUCT_PACKAGES += \
     CorvusWalls \
     CustomFonts \
     OmniJaws \
-    GamingMode
+    GamingMode \
+    TouchGestures
 
 # Charger mode images
 ifeq ($(TARGET_INCLUDE_PIXEL_CHARGER),true)
