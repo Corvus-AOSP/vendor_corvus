@@ -29,18 +29,25 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.input.video_enabled=false \
     ro.build.selinux=1
 
+# Gapps
+ifeq ($(USE_GAPPS),true)
+include vendor/google/gms/config.mk
+
 # SetupWizard configuration
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
+    setupwizard.feature.baseline_setupwizard_enabled=true \
+    ro.opa.eligible_device=true \
     ro.setupwizard.enterprise_mode=1 \
     ro.setupwizard.esim_cid_ignore=00000001 \
     ro.setupwizard.rotation_locked=true \
     setupwizard.enable_assist_gesture_training=true \
-    setupwizard.feature.baseline_setupwizard_enabled=true \
-    setupwizard.feature.device_default_dark_mode=true \
-    setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
-    setupwizard.feature.show_pixel_tos=true \
+    setupwizard.theme=glif_v3_light \
     setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
-    setupwizard.theme=glif_v3_light
+    setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
+    setupwizard.feature.show_pixel_tos=false \
+    setupwizard.feature.show_support_link_in_deferred_setup=false \
+    setupwizard.feature.day_night_mode_enabled=true \
+    setupwizard.feature.portal_notification=true
 
 # Gboard configuration
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -48,16 +55,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_b=1 \
     ro.com.google.ime.theme_id=5 \
     ro.com.google.ime.system_lm_dir=/product/usr/share/ime/google/d3_lms
+endif
 
 # StorageManager configuration
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=1 \
     ro.storage_manager.show_opt_in=false
-
-# Gapps
-ifeq ($(USE_GAPPS),true)
-include vendor/google/gms/config.mk
-endif
 
 # Proton Clang
 ifeq ($(USE_PROTON),true)
