@@ -35,7 +35,8 @@ PRODUCT_PACKAGES += \
 
 # Config
 PRODUCT_PACKAGES += \
-    SimpleDeviceConfig
+    SimpleDeviceConfig \
+    SettingsIntelligenceGooglePrebuilt
 
 # Flipendo
 PRODUCT_PACKAGES += \
