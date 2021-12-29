@@ -31,6 +31,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Gapps
 ifeq ($(USE_GAPPS),true)
 $(call inherit-product-if-exists, vendor/google/gms/config.mk)
+$(call inherit-product, vendor/google/pixel/config.mk)
 endif
 
 # SetupWizard configuration
@@ -55,7 +56,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_b=1 \
     ro.com.google.ime.theme_id=5 \
     ro.com.google.ime.system_lm_dir=/product/usr/share/ime/google/d3_lms
-endif
 
 # StorageManager configuration
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
