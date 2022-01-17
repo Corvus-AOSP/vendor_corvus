@@ -194,7 +194,6 @@ public class ColorPickerPreference extends Preference implements
                     getOnPreferenceChangeListener().onPreferenceChange(ColorPickerPreference.this,
                             Integer.valueOf(shuffleColor));
                     onColorChanged(shuffleColor);
-                    Toast.makeText(getContext(), "Please give time while the SystemUI refreshes new accent", Toast.LENGTH_SHORT).show();
                 } catch (NullPointerException e) {
                 }
             }
