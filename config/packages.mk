@@ -10,6 +10,9 @@ PRODUCT_PACKAGES += \
     GamingMode \
     TouchGestures
 
+# Themes
+include vendor/themes/common.mk
+
 # Charger mode images
 ifeq ($(TARGET_INCLUDE_PIXEL_CHARGER),true)
 PRODUCT_PACKAGES += \
