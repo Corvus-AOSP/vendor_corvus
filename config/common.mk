@@ -35,20 +35,20 @@ $(call inherit-product-if-exists, vendor/google/gms/config.mk)
 endif
 
 # SetupWizard configuration
-PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.feature.baseline_setupwizard_enabled=true \
-    ro.opa.eligible_device=true \
-    ro.setupwizard.enterprise_mode=1 \
-    ro.setupwizard.esim_cid_ignore=00000001 \
-    ro.setupwizard.rotation_locked=true \
-    setupwizard.enable_assist_gesture_training=true \
-    setupwizard.theme=glif_v3_light \
-    setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
-    setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
-    setupwizard.feature.show_pixel_tos=false \
-    setupwizard.feature.show_support_link_in_deferred_setup=false \
-    setupwizard.feature.day_night_mode_enabled=true \
-    setupwizard.feature.portal_notification=true
+# PRODUCT_PRODUCT_PROPERTIES += \
+#     setupwizard.feature.baseline_setupwizard_enabled=true \
+#     ro.opa.eligible_device=true \
+#     ro.setupwizard.enterprise_mode=1 \
+#     ro.setupwizard.esim_cid_ignore=00000001 \
+#     ro.setupwizard.rotation_locked=true \
+#     setupwizard.enable_assist_gesture_training=true \
+#     setupwizard.theme=glif_v3_light \
+#     setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
+#     setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
+#     setupwizard.feature.show_pixel_tos=false \
+#     setupwizard.feature.show_support_link_in_deferred_setup=false \
+#     setupwizard.feature.day_night_mode_enabled=true \
+#     setupwizard.feature.portal_notification=true
 
 # Gboard configuration
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
