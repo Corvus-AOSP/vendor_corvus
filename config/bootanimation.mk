@@ -7,7 +7,7 @@ ifneq ($(filter s2 jd2019 kunlun2 begonia raphael lavender payton mido miatoll e
 scr_resolution := 1080
 endif
 
-ifneq ($(filter ysl laurel_sprout,$(corvus_device)),)
+ifneq ($(filter ysl gemini laurel_sprout,$(corvus_device)),)
 scr_resolution := 720
 endif
 
