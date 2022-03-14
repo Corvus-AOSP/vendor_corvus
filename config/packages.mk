@@ -5,10 +5,7 @@ PRODUCT_PACKAGES += \
     messaging \
     ThemePicker \
     CustomDoze \
-    CorvusWalls \
-    OmniJaws \
-    GamingMode \
-    TouchGestures
+    CorvusWalls
 
 # Themes
 include vendor/themes/common.mk
