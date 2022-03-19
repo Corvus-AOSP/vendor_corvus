@@ -3,9 +3,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
-    ThemePicker \
-    CustomDoze \
-    CorvusWalls
+    ThemePicker
 
 # Themes
 include vendor/themes/common.mk
@@ -41,7 +39,8 @@ PRODUCT_PACKAGES += \
 ifneq (,$(filter $(RAVEN_LAIR), Official Beta-Official))
 PRODUCT_PACKAGES += \
     RavenDesk \
-    CorvusZen
+    CorvusZen \
+    RavenWalls
 endif
 
 # Chromium
