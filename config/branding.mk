@@ -1,6 +1,6 @@
 # Set all versions
 RAVEN_LAIR ?= Unofficial
-CORVUS_VERSION_BASE := S1.0
+CORVUS_VERSION_BASE := S2.1
 CORVUS_CODENAME := Revolt
 
 # Set all versions
