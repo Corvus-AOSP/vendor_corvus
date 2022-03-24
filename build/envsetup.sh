@@ -20,6 +20,8 @@ Additional Corvus-OS functions:
 EOF
 }
 
+alias mka=m
+
 function mk_timer()
 {
     local start_time=$(date +"%s")
@@ -406,8 +408,6 @@ function makerecipe() {
     git commit -a -m "$1"
     cd ..
 }
-
-alias mka=m
 
 function cmka() {
     if [ ! -z "$1" ]; then
