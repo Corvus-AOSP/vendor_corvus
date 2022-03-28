@@ -99,10 +99,6 @@ PRODUCT_COPY_FILES += \
     vendor/corvus/build/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/corvus/build/tools/50-corvus.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-corvus.sh
 
-# Permission
-PRODUCT_COPY_FILES += \
-    vendor/corvus/config/permissions/privapp-permissions-corvus-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-corvus.xml
-
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 

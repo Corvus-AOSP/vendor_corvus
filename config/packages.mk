@@ -29,8 +29,7 @@ PRODUCT_PACKAGES += \
 
 # Config
 PRODUCT_PACKAGES += \
-    SimpleDeviceConfig \
-    SettingsIntelligenceGooglePrebuilt
+    SimpleDeviceConfig
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
