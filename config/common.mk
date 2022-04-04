@@ -73,6 +73,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.binary_xml=false
 
+# Disable remote keyguard animation
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.wm.enable_remote_keyguard_animation=0
+
 # Proton Clang
 ifeq ($(USE_PROTON),true)
 KERNEL_SUPPORTS_LLVM_TOOLS := true
