@@ -73,6 +73,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.binary_xml=false
 
+# Blurs
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1
+    
 # Disable blur on app-launch
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.launcher.blur.appLaunch=0
