@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 AICP
+ * Copyright (C) 2016-2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,29 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.corvus.support.preferences;
 
 import android.content.Context;
+import android.provider.Settings;
+import android.os.UserHandle;
 import android.util.AttributeSet;
+
+import com.android.settingslib.widget.MainSwitchPreference;
 
 import com.corvus.support.preferences.SystemSettingsStore;
 
-public class SystemSettingMasterSwitchPreference extends MasterSwitchPreference {
+public class SystemSettingMainSwitchPreference extends MainSwitchPreference {
 
-    public SystemSettingMasterSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
+    public SystemSettingMainSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingMasterSwitchPreference(Context context, AttributeSet attrs) {
+    public SystemSettingMainSwitchPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingMasterSwitchPreference(Context context) {
+    public SystemSettingMainSwitchPreference(Context context) {
         super(context);
         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
-
 }
