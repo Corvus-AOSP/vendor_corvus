@@ -3,7 +3,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
-    ThemePicker
+    ThemePicker \
+    GamingMode
 
 # Themes
 include vendor/themes/common.mk
