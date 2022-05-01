@@ -142,6 +142,8 @@ include vendor/corvus/config/packages.mk
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/corvus/overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/corvus/overlay/common
 
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/corvus/config/device_framework_matrix.xml
+
 # Copy all init rc files
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
