@@ -42,8 +42,3 @@ PRODUCT_PACKAGES += \
     CorvusZen \
     RavenWalls
 endif
-
-# Chromium
-PRODUCT_PACKAGES += \
-    TrichromeChrome \
-    TrichromeWebView
