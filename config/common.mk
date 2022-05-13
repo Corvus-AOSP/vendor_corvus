@@ -34,40 +34,10 @@ $(call inherit-product-if-exists, vendor/google/gms/config.mk)
 $(call inherit-product, vendor/google/pixel/config.mk)
 endif
 
-# SetupWizard configuration
-# PRODUCT_PRODUCT_PROPERTIES += \
-#     setupwizard.feature.baseline_setupwizard_enabled=true \
-#     ro.opa.eligible_device=true \
-#     ro.setupwizard.enterprise_mode=1 \
-#     ro.setupwizard.esim_cid_ignore=00000001 \
-#     ro.setupwizard.rotation_locked=true \
-#     setupwizard.enable_assist_gesture_training=true \
-#     setupwizard.theme=glif_v3_light \
-#     setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
-#     setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
-#     setupwizard.feature.show_pixel_tos=false \
-#     setupwizard.feature.show_support_link_in_deferred_setup=false \
-#     setupwizard.feature.day_night_mode_enabled=true \
-#     setupwizard.feature.portal_notification=true
-
-# Gboard configuration
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.com.google.ime.bs_theme=true \
-    ro.com.google.ime.kb_pad_port_b=1 \
-    ro.com.google.ime.theme_id=5 \
-    ro.com.google.ime.system_lm_dir=/product/usr/share/ime/google/d3_lms
-
 # StorageManager configuration
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=1 \
     ro.storage_manager.show_opt_in=false
-
-# Gboard side padding
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.com.google.ime.kb_pad_port_l=4 \
-    ro.com.google.ime.kb_pad_port_r=4 \
-    ro.com.google.ime.kb_pad_land_l=64 \
-    ro.com.google.ime.kb_pad_land_r=64
 
 # Disable writing to XML as binary.
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -104,6 +74,10 @@ endif
 # Copy all custom init rc files
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
+
+# init
+PRODUCT_COPY_FILES += \
+    vendor/corvus/prebuilt/common/etc/init/init.corvus-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.corvus-system_ext.rc
 
 # Permission
 PRODUCT_COPY_FILES += \

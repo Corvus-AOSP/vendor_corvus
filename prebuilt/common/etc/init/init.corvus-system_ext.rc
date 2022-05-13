@@ -1,4 +1,4 @@
-# LineageOS core functionality
+# CorvusOS core functionality
 on init
     export TERMINFO /product/etc/terminfo
 
