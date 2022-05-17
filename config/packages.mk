@@ -4,7 +4,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     messaging \
     ThemePicker \
-    GamingMode
+    GameSpace \
+    RavenWalls
 
 # Themes
 include vendor/themes/common.mk
@@ -39,6 +40,5 @@ PRODUCT_PACKAGES += \
 ifneq (,$(filter $(RAVEN_LAIR), Official Beta-Official))
 PRODUCT_PACKAGES += \
     RavenDesk \
-    CorvusZen \
-    RavenWalls
+    CorvusZen
 endif
