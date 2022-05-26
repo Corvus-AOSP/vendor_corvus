@@ -9,14 +9,11 @@ USE_DEX2OAT_DEBUG := false
 # ART
 # Optimize everything for preopt
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
-ifeq ($(TARGET_SUPPORTS_64_BIT_APPS), true)
 # Don't preopt prebuilts
 DONT_DEXPREOPT_PREBUILTS := true
-
 # Use 64-bit dex2oat for better dexopt time.
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat64.enabled=true
-endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.boot=verify \
