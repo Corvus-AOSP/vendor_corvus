@@ -119,10 +119,6 @@ include vendor/corvus/config/branding.mk
 # Packages
 include vendor/corvus/config/packages.mk
 
-# TouchGestures
-PRODUCT_PACKAGES += \
-    TouchGestures
-
 # Themes
 #include vendor/themes/common.mk
 
