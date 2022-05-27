@@ -53,8 +53,6 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
 
     protected TextView mValueTextView;
     protected ImageView mResetImageView;
-    protected ImageView mMinusImageView;
-    protected ImageView mPlusImageView;
     protected SeekBar mSeekBar;
 
     protected boolean mTrackingTouch = false;
@@ -140,18 +138,12 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
 
         mValueTextView = (TextView) holder.findViewById(R.id.value);
         mResetImageView = (ImageView) holder.findViewById(R.id.reset);
-        mMinusImageView = (ImageView) holder.findViewById(R.id.minus);
-        mPlusImageView = (ImageView) holder.findViewById(R.id.plus);
 
         updateValueViews();
 
         mSeekBar.setOnSeekBarChangeListener(this);
         mResetImageView.setOnClickListener(this);
-        mMinusImageView.setOnClickListener(this);
-        mPlusImageView.setOnClickListener(this);
         mResetImageView.setOnLongClickListener(this);
-        mMinusImageView.setOnLongClickListener(this);
-        mPlusImageView.setOnLongClickListener(this);
     }
 
     protected int getLimitedValue(int v) {
@@ -179,25 +171,6 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
                 mResetImageView.setVisibility(View.INVISIBLE);
             else
                 mResetImageView.setVisibility(View.VISIBLE);
-        }
-        if (mMinusImageView != null) {
-            if (mValue == mMinValue || mTrackingTouch) {
-                mMinusImageView.setClickable(false);
-                mMinusImageView.setColorFilter(getContext().getColor(R.color.disabled_text_color),
-                    PorterDuff.Mode.MULTIPLY);
-            } else {
-                mMinusImageView.setClickable(true);
-                mMinusImageView.clearColorFilter();
-            }
-        }
-        if (mPlusImageView != null) {
-            if (mValue == mMaxValue || mTrackingTouch) {
-                mPlusImageView.setClickable(false);
-                mPlusImageView.setColorFilter(getContext().getColor(R.color.disabled_text_color), PorterDuff.Mode.MULTIPLY);
-            } else {
-                mPlusImageView.setClickable(true);
-                mPlusImageView.clearColorFilter();
-            }
         }
     }
 
@@ -246,10 +219,6 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         if (id == R.id.reset) {
             Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_to_set, getTextValue(mDefaultValue)),
                     Toast.LENGTH_LONG).show();
-        } else if (id == R.id.minus) {
-            setValue(mValue - mInterval, true);
-        } else if (id == R.id.plus) {
-            setValue(mValue + mInterval, true);
         }
     }
 
@@ -260,10 +229,6 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
             setValue(mDefaultValue, true);
             //Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_is_set),
             //        Toast.LENGTH_LONG).show();
-        } else if (id == R.id.minus) {
-            setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue < mValue * 2 ? Math.floorDiv(mMaxValue + mMinValue, 2) : mMinValue, true);
-        } else if (id == R.id.plus) {
-                setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue > mValue * 2 ? -1 * Math.floorDiv(-1 * (mMaxValue + mMinValue), 2) : mMaxValue, true);
         }
         return true;
     }
