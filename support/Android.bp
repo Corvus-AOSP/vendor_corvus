@@ -2,11 +2,11 @@ android_library {
 
     name: "VendorSupport-preference",
 
-    srcs: ["src/**/*.java"],
+    optimize: {
+        enabled: false,
+    },
 
-    defaults: [
-        "SettingsLibDefaults",
-    ],
+    srcs: ["src/**/*.java"],
 
     static_libs: [
         "androidx.core_core",
