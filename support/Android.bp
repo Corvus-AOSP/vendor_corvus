@@ -2,10 +2,6 @@ android_library {
 
     name: "VendorSupport-preference",
 
-    optimize: {
-        enabled: false,
-    },
-
     srcs: ["src/**/*.java"],
 
     defaults: [
