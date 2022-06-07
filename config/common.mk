@@ -100,9 +100,6 @@ PRODUCT_COPY_FILES += \
     vendor/corvus/build/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/corvus/build/tools/50-corvus.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-corvus.sh
 
-# Disable vendor restrictions
-PRODUCT_RESTRICT_VENDOR_FILES := false
-
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
 # leave less information available via JDWP.
@@ -144,12 +141,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
-
-# Flatten APEXs for performance
-OVERRIDE_TARGET_FLATTEN_APEX := true
-# This needs to be specified explicitly to override ro.apex.updatable=true from
-# # prebuilt vendors, as init reads /product/build.prop after /vendor/build.prop
-PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
 
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
