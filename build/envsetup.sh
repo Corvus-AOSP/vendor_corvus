@@ -620,6 +620,11 @@ function sort-blobs-list() {
     $T/tools/extract-utils/sort-blobs-list.py $@
 }
 
+function sort-blobs-list() {
+    T=$(gettop)
+    $T/tools/extract-utils/sort-blobs-list.py $@
+}
+
 function fixup_common_out_dir() {
     common_out_dir=$(get_build_var OUT_DIR)/target/common
     target_device=$(get_build_var TARGET_DEVICE)
