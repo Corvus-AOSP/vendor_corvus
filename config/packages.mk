@@ -33,6 +33,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
 
+# Root
+PRODUCT_PACKAGES += \
+    adb_root
+
 # SystemUI plugins
 PRODUCT_PACKAGES += \
     QuickAccessWallet
