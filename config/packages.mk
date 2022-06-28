@@ -17,6 +17,12 @@ PRODUCT_PACKAGES += \
     product_charger_res_images
 endif
 
+# Charger mode images
+ifeq ($(USE_PHOTON_CAM),true)
+PRODUCT_PACKAGES += \
+    PhotonCamera
+endif
+
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.ntfs \
