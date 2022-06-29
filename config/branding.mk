@@ -1,7 +1,11 @@
 # Set all versions
-RAVEN_LAIR ?= Unofficial
+RAVEN_LAIR := Unofficial
 CORVUS_VERSION_BASE := S3.2
 CORVUS_CODENAME := Vindicate
+
+ifneq ($(filter Trishiraj victor10520 KSSRAO ManavjitSingh MAdMiZ Fosslover Meghthedev PAiN Roxor-007 H3M3L Anh Tran Sukeerat SG(irongfly) nathankits Ankan005 Ajit,$(CORVUS_MAINTAINER)),)
+RAVEN_LAIR := Official
+endif
 
 # Set all versions
 BUILD_DATE := $(shell date -u +%d-%m-%Y)
