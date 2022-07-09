@@ -37,6 +37,10 @@ PRODUCT_COPY_FILES += \
 $(call find-copy-subdir-files,*,vendor/corvus/prebuilt/product/usr/,$(TARGET_COPY_OUT_PRODUCT)/usr)
 endif
 
+ifeq ($(USE_GAPPS_SLIM), true)
+$(call inherit-product, vendor/google/gms-slim/gms-slim-vendor.mk)
+endif
+
 # StorageManager configuration
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=1 \
