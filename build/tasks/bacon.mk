@@ -29,7 +29,7 @@ INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(CORVUS_VERSION).zip
 .PHONY: corvus
 corvus: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(INTERNAL_BACON_TARGET)
-	$(hide) $(MD5SUM) $(INTERNAL_BACON_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INTERNAL_BACON_TARGET).md5sum
+	$(hide) $(SHA256) $(INTERNAL_BACON_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INTERNAL_BACON_TARGET).sha256sum
 	@echo  ${CL_MAG}""${CL_MAG}
 	@echo -e ${CL_MAG}"...............#######..######..######.##...........##.##.....##..######............"${CL_MAG}
 	@echo -e ${CL_MAG}"..............##.......##....##.##...##.##.........##..##.....##.##....##..........."${CL_MAG}
