@@ -20,7 +20,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true \
     ro.opa.eligible_device=true \
     drm.service.enabled=true \
-    media.mediadrmservice.enable=true
+    media.mediadrmservice.enable=true \
     net.tethering.noprovisioning=true \
     keyguard.no_require_sim=true \
     persist.sys.disable_rescue=true \
@@ -55,13 +55,17 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.launcher.blur.appLaunch=0
 
+# Disable async MTE on system_server
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    arm64.memtag.process.system_server=off
+
+# Enable dex2oat64 to do dexopt
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    dalvik.vm.dex2oat64.enabled=true
+
 # Disable remote keyguard animation
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.wm.enable_remote_keyguard_animation=0
-
-# IORap app launch prefetching using Perfetto traces and madvise
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.iorapd.enable=true
 
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
@@ -96,19 +100,16 @@ PRODUCT_COPY_FILES += \
     vendor/corvus/build/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/corvus/build/tools/50-corvus.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-corvus.sh
 
-# Disable vendor restrictions
-PRODUCT_RESTRICT_VENDOR_FILES := false
-
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
+# Skip boot JAR checks.
+SKIP_BOOT_JARS_CHECK := true
+
 # Enable ccache
 USE_CCACHE := true
-
-# Art
-include vendor/corvus/config/art.mk
 
 # Boot animation
 include vendor/corvus/config/bootanimation.mk
@@ -119,9 +120,6 @@ include vendor/corvus/config/branding.mk
 # Packages
 include vendor/corvus/config/packages.mk
 
-# Themes
-#include vendor/themes/common.mk
-
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/corvus/overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/corvus/overlay/common
@@ -129,6 +127,10 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/corvus/overlay/common
 # Copy all init rc files
 $(foreach f,$(wildcard vendor/corvus/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
+
+# Enable SIP+VoIP on all targets
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.sip.voip.xml
 
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED ?= true
@@ -147,6 +149,9 @@ OVERRIDE_TARGET_FLATTEN_APEX := true
 # # prebuilt vendors, as init reads /product/build.prop after /vendor/build.prop
 PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
 
+# Don't dexpreopt prebuilts. (For GMS).
+DONT_DEXPREOPT_PREBUILTS := true
+
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
@@ -154,3 +159,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable gestural navigation overlay to match default navigation mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
+
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI \
+    Settings
