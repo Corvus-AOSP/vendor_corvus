@@ -5,7 +5,8 @@ PRODUCT_PACKAGES += \
     messaging \
     ThemePicker \
     GameSpace \
-    RavenWalls
+    RavenWalls \
+    OmniJaws
 
 # Themes
 include vendor/themes/common.mk
