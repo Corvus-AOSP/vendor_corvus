@@ -1,9 +1,9 @@
 # Set all versions
 RAVEN_LAIR := Unofficial
-CORVUS_VERSION_BASE := S3.2
-CORVUS_CODENAME := Vindicate
+CORVUS_VERSION_BASE := S4.0
+CORVUS_CODENAME := Leviathan
 
-ifneq ($(filter Trishiraj victor10520 KSSRAO ManavjitSingh MAdMiZ Fosslover Meghthedev PAiN Roxor-007 H3M3L AnhTran Sukeerat EinarG nathankits Ankan005 Ajit YadavMohit19 KangMonkey TheSanty,$(CORVUS_MAINTAINER)),)
+ifneq ($(filter Trishiraj victor10520 KSSRAO ManavjitSingh MAdMiZ Fosslover Meghthedev PAiN Roxor-007 H3M3L AnhTran Sukeerat EinarG Ankan005 Ajit YadavMohit19 KangMonkey TheSanty,$(CORVUS_MAINTAINER)),)
 RAVEN_LAIR := Official
 endif
 
