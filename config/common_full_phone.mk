@@ -16,3 +16,7 @@ PRODUCT_COPY_FILES += \
 # SIM Toolkit
 PRODUCT_PACKAGES += \
     Stk
+
+# AOSP Keyboard
+PRODUCT_PACKAGES += \
+    LatinIME
