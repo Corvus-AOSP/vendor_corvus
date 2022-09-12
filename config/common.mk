@@ -28,6 +28,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.wfd.virtual=0 \
     ro.input.video_enabled=false
 
+# SystemUI
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    dalvik.vm.systemuicompilerfilter=speed
+
 # Gapps
 ifeq ($(USE_GAPPS),true)
 $(call inherit-product-if-exists, vendor/google/gms/config.mk)
