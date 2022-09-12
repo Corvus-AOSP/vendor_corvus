@@ -249,25 +249,6 @@ librmnetctl_pre_uplink {
 }
 
 soong_config_module_type {
-    name: "camera_boottime_timestamp",
-    module_type: "cc_defaults",
-    config_namespace: "corvusQcomVars",
-    bool_variables: ["needs_camera_boottime_timestamp"],
-    properties: [
-        "cflags",
-    ],
-}
-
-camera_boottime_timestamp {
-    name: "needs_camera_boottime_defaults",
-    soong_config_variables: {
-        needs_camera_boottime_timestamp: {
-            cflags: ["-DTARGET_CAMERA_BOOTTIME_TIMESTAMP"],
-        },
-    },
-}
-
-soong_config_module_type {
     name: "camera_needs_client_info_lib",
     module_type: "cc_defaults",
     config_namespace: "corvusGlobalVars",
