@@ -48,8 +48,8 @@ org_manifest = "device"  # leave empty if org is provided in manifest
 org_display = "CorvusROM-Devices"  # needed for displaying
 
 default_manifest = ".repo/manifests/default.xml"
-#corvus_manifest = ".repo/manifests/snippets/corvus.xml"
-#lineage_manifest = ".repo/manifests/snippets/lineage.xml"
+corvus_manifest = ".repo/manifests/snippets/corvus.xml"
+lineage_manifest = ".repo/manifests/snippets/lineage.xml"
 
 github_auth = None
 
