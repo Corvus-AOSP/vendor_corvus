@@ -32,7 +32,6 @@ SOONG_CONFIG_corvusGlobalVars += \
     additional_gralloc_10_usage_bits \
     bootloader_message_offset \
     camera_needs_client_info \
-    disable_postrender_cleanup \
     has_memfd_backport \
     needs_netd_direct_connect_rule \
     target_init_vendor_lib \
@@ -65,7 +64,6 @@ endif
 
 # Soong bool variables
 SOONG_CONFIG_corvusGlobalVars_camera_needs_client_info := $(TARGET_CAMERA_NEEDS_CLIENT_INFO)
-SOONG_CONFIG_corvusGlobalVars_disable_postrender_cleanup := $(TARGET_DISABLE_POSTRENDER_CLEANUP)
 SOONG_CONFIG_corvusGlobalVars_has_memfd_backport := $(TARGET_HAS_MEMFD_BACKPORT)
 SOONG_CONFIG_corvusGlobalVars_needs_netd_direct_connect_rule := $(TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE)
 SOONG_CONFIG_corvusGlobalVars_target_uses_prebuilt_dynamic_partitions := $(TARGET_USES_PREBUILT_DYNAMIC_PARTITIONS)
