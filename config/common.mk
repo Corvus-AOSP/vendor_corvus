@@ -166,3 +166,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Settings
+
+# Spoof fingerprint for Google Play Services and SafetyNet
+ifeq ($(PRODUCT_OVERRIDE_GMS_FINGERPRINT),)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.build.gms_fingerprint=Xiaomi/dipper/dipper:8.1.0/OPM1.171019.011/V9.5.5.0.OEAMIFA:user/release-keys
+else
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.build.gms_fingerprint=$(PRODUCT_OVERRIDE_GMS_FINGERPRINT)
+endif
