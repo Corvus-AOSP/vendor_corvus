@@ -48,8 +48,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     QuickAccessWallet
 
-#ifneq (,$(filter $(RAVEN_LAIR), Official Beta-Official))
-#PRODUCT_PACKAGES += \
-#    RavenDesk \
-#    CorvusZen
-#endif
+ifneq (,$(filter $(RAVEN_LAIR), Official Beta-Official))
+PRODUCT_PACKAGES += \
+    RavenDesk \
+    CorvusZen
+endif
