@@ -36,9 +36,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
 
 # Gapps
-ifeq ($(USE_GAPPS),true)
-$(call inherit-product-if-exists, vendor/google/gms/config.mk)
-$(call inherit-product, vendor/google/pixel/config.mk)
+ifeq ($(USE_GAPPS), true)
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
 
 PRODUCT_COPY_FILES += \
 $(call find-copy-subdir-files,*,vendor/corvus/prebuilt/product/usr/,$(TARGET_COPY_OUT_PRODUCT)/usr)
