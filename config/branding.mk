@@ -1,7 +1,7 @@
 # Set all versions
 RAVEN_LAIR := Unofficial
-CORVUS_VERSION_BASE := R5.0
-CORVUS_CODENAME := Tabula-Rasa
+CORVUS_VERSION_BASE := T5.0
+CORVUS_CODENAME := El-Dorado
 
 ifneq ($(filter Trishiraj victor10520 KSSRAO ManavjitSingh MAdMiZ Fosslover Meghthedev PAiN Roxor-007 H3M3L AnhTran Sukeerat EinarG Ankan005 Ajit YadavMohit19 Ritzzz TheSanty CoolDude6942,$(CORVUS_MAINTAINER)),)
 RAVEN_LAIR := Official
