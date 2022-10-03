@@ -47,4 +47,7 @@
     
     <!-- SystemUIFactory component -->
     <string name="config_systemUIFactoryComponent" translatable="false">com.corvus.systemui.CorvusSystemUIFactory</string>
+
+    <!-- SystemUI vendor service, used in config_systemUIServiceComponents. -->
+    <string name="config_systemUIVendorServiceComponent">com.corvus.systemui.CorvusServices</string>
 </resources>
